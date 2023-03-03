@@ -2,9 +2,11 @@
   "IsEncrypted": false,
   "Values": {
     "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
-  },"Host": {
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "DATABASE_CONNECTION_STRING0": "Data Source=localhost,1444;Database=School;Persist Security Info=True;User ID=sa;Password=SqlPassword!;",
+    "DATABASE_CONNECTION_STRING": "Server=tcp:static-web-apps-db-server.database.windows.net,1433;Initial Catalog=static-web-apps-lesson;Persist Security Info=False;User ID=static-web-apps;Password=DB0admin-user;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+  },
+  "Host": {
     "CORS": "*"
- }
- 
+  }
 }

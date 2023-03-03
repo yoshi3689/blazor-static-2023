@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Functions101": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7044",
+      "launchBrowser": false
+    }
+  }
+}

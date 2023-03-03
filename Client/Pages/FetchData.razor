@@ -1,0 +1,49 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<PageTitle>Students</PageTitle>
+
+<h1>Students</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (students == null) {
+    <p><em>Loading...</em></p>
+} else {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Occupation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in students)
+            {
+                <tr>
+                    <td>@item.StudentId</td>
+                    <td>@item.FirstName @item.LastName</td>
+                    <td>@item.School</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Student[]? students;
+
+    protected override async Task OnInitializedAsync() {
+  students = await Http.GetFromJsonAsync<Student[]>("/api/students");
+}
+
+
+    public partial class Student {
+        public int StudentId { get; set; }
+        public string? LastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? School { get; set; }
+
+    }
+}
